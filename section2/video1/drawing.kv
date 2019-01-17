@@ -1,0 +1,17 @@
+BoxLayout:
+    orientation: "vertical"
+    spacing: 10
+
+    Button:
+        text: "Hello"
+
+    FunnyButton:
+        text: "World"
+
+
+<FunnyButton@Button>:
+    canvas.after:
+        Color:
+            rgb: (0.25, 0.75, 0)
+        Ellipse:
+            size: self.size
