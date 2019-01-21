@@ -1,0 +1,16 @@
+BoxLayout:
+    third_button: identified_button
+    orientation: "vertical"
+    spacing: 10
+
+    Button:
+        text: "Hello"
+        on_press: app.do_something(*args)
+
+    HandledButton:
+        text: "World"
+
+    Button:
+        id: identified_button
+        text: "of Kivy"
+

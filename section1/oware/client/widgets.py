@@ -29,31 +29,9 @@ class GameBoard(Widget):
 
 class House(Widget):
     index = NumericProperty(-1)
-    seeds = NumericProperty(0)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-
-        self.seed_widgets = [Seed() for i in range(self.seeds)]
-
-    def on_seeds(self, instance, value):
-        delta = value - len(self.seed_widgets)
-
-        if delta < 0:
-            for i in range(-delta):
-                self.remove_widget(self.seed_widgets.pop())
-
-        elif delta > 0:
-            for i in range(delta):
-                self.seed_widgets.append(Seed())
-                self.seed_widgets[-1].sow(self)
-
-    def on_touch_down(self, touch):
-        if self.collide_point(touch.x, touch.y):
-            if self.seeds:
-                self.seeds -= 1
-            else:
-                self.seeds += 1
 
 
 class Seed(Widget):

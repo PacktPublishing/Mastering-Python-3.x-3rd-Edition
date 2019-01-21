@@ -1,0 +1,13 @@
+BoxLayout:
+    orientation: "vertical"
+    spacing: 10
+
+    Button:
+        text: "Whoah"
+        on_press: app.do_something(*args)
+
+    Button:
+        text: "Touch UI"
+        on_touch_down: app.touched(*args)
+        on_touch_move: app.moved(*args)
+        on_touch_up: app.untouched(*args)
