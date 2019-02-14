@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cython = "*"
+kivy = "*"
+aiohttp = "*"
+aiodns = "*"
+mypy = "*"
+pyinstaller = "*"
+pytest = "*"
+rx = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.7"
+
+[pipenv]
+allow_prereleases = true
