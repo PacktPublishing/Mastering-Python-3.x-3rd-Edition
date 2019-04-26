@@ -1,0 +1,55 @@
+GameBoard
+
+<GameBoard>:
+    grid: grid
+
+    canvas.before:
+        Rectangle:
+            pos: root.pos
+            size: root.size
+            source: "wood.jpg"
+
+    Label:
+        font_size: 70
+        top: root.top - 20
+        x: root.x + 80
+        text: "Oware"
+        color: (0.9, 0.9, 0.1, 0.5)
+
+    GridLayout:
+        id: grid
+        cols: 6
+        width: root.width
+        height: root.height * 2 / 3
+        x: root.x
+        y: root.y + root.height * 1 / 6
+
+<House>:
+    size_hint: (1 / 3, 1 / 7)
+
+    canvas.before:
+        Ellipse:
+            pos: self.pos
+            size: self.size
+            source: "house.png"
+
+<Seed>:
+    size: (50, 50)
+
+    canvas.before:
+        PushMatrix
+        Translate:
+            x: root.center_x
+            y: root.center_y
+        Rotate:
+            angle: root.angle
+            origin: (0, 0)
+
+    canvas:
+        Rectangle:
+            pos: (-25, -25)
+            size: root.size
+            source: root.image
+
+    canvas.after:
+        PopMatrix
